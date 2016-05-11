@@ -1,0 +1,28 @@
+function setLang(language)
+  if language=="en" then
+    lang = {en}
+  elseif language=="sweg" then
+    lang = {sweg}
+  else
+    printError("Unknown Language")
+    error()
+  end
+end
+en = {
+  firstTime = {
+    msg1 = "Welcome to Synergy OS!",
+    msg2 = "It seems this is your first time using Synergy.",
+    msg3 = "Would you like a tour?",
+    msgYes = "Alright, let's go!",
+    msgNo = "Please enjoy using Synergy!",
+  },
+  button = {
+    yes = "Yes",
+    no = "No",
+    ok = "Ok",
+    cancel = "Cancel",
+    update = "Update",
+    delete = "Delete",
+  },
+}
+

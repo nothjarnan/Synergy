@@ -1,0 +1,10 @@
+term.setBackgroundColor(colors.lightGray)
+term.clear()
+logo = paintutils.loadImage("os/pic/logo")
+paintutils.drawImage(logo,4,4)
+sleep(2)
+if settings.get("synergy.firstTime") then
+  shell.run("os/synergy/firstTime")
+else
+  shell.run("os/synergy/login")
+end
