@@ -1,0 +1,15 @@
+function breakText(text)
+  output = {}
+  leng = #text
+
+  return output
+end
+function xCenterInBox()
+
+end
+function yCenterInBox()
+
+end
+function xYCenterInBox(text,x1,y1,x2,y2)
+  term.setCursorPos()
+end

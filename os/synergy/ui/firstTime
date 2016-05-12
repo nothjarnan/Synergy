@@ -1,0 +1,6 @@
+os.loadAPI("../api/osstring")
+term.setBackgroundColor(colors.grey)
+term.clear()
+paintutils.drawFilledBox(7,3,44,16,colors.lightGray)
+xYCenterInBox()
+os.unloadAPI("../api/osstring")

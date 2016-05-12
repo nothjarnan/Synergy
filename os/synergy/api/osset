@@ -1,0 +1,6 @@
+function read(path)
+  settings = {}
+  file = fs.open(path,"r")
+  fileData = file.readAll()
+  
+end

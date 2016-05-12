@@ -1,8 +1,0 @@
-os.loadAPI("os/synergy/api/language")
-language.setLang("en")
-term.setBackgroundColor(colors.lime)
-term.clear()
-term.setTextColor(colors.black)
-term.setCursorPos(2,4)
-term.write(language.lang.firstTime.msg1)
-os.unloadAPI("os/synergy/api/language")
