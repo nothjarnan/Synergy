@@ -1,8 +1,28 @@
-function breakText(text)
-  output = {}
-  leng = #text
-
-  return output
+function findChar(text,pos)
+  char = string.sub(text,pos,pos)
+  return char
+end
+function breakIntoWords(text)
+  words = {}
+  prev = ""
+  for i = 1,#text do
+    char = findChar(text,i)
+    if char==" " then
+      table.insert(words,prev)
+      prev = ""
+    else
+      prev = word..char
+    end
+  end
+  return words
+end
+function breakText(text,w)
+  lines = {}
+  words = breakIntoWords(text)
+  if #text>w then
+    
+  end
+  return lines
 end
 function xCenterInBox()
 
@@ -12,4 +32,5 @@ function yCenterInBox()
 end
 function xYCenterInBox(text,x1,y1,x2,y2)
   term.setCursorPos()
+  lines = breakText(text,x2-x1)
 end
