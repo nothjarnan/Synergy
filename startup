@@ -3,8 +3,8 @@ term.clear()
 logo = paintutils.loadImage("os/pic/logo")
 paintutils.drawImage(logo,4,4)
 sleep(2)
-if settings.get("synergy.firstTime") then
-  shell.run("os/synergy/firstTime")
+if true then
+  shell.run("os/synergy/ui/firstTime")
 else
-  shell.run("os/synergy/login")
+  shell.run("os/synergy/ui/login")
 end
