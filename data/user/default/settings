@@ -1,1 +1,4 @@
-background : osDefault
+{
+  {"userpic","default"};
+  {"background","osdefault"};
+}

@@ -1,0 +1,8 @@
+{
+  bg = colors.lightBlue;
+  bar = {
+    col = colors.blue;
+    text = "Unset bar title";
+    exit = true;
+  };
+}

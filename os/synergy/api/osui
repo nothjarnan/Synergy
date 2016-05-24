@@ -1,0 +1,17 @@
+w,h = term.getSize()
+
+function setStyle(style)
+  if not type(style)=="table" then
+    error("Invalid style!")
+  end
+  term.setBackgroundColor(style.bg)
+  term.clear()
+  term.setCursorPos(1,1)
+  term.setBackgroundColor(style.bar.col)
+  term.clearLine()
+  write(style.bar.text)
+  if style.bar.exit then
+    term.setCursorPos(w,1)
+    term.blit("x","f","e")
+  end
+end
