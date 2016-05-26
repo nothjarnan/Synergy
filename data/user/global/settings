@@ -1,0 +1,12 @@
+{
+  packdl = {
+    bookmarks = {
+      {"Official package server","http://waitcc.net78.net/synergy/packages/ops/"};
+    };
+  };
+  accounts = {
+    database = {
+      {"username","default","pass",""};
+    };
+  };
+}

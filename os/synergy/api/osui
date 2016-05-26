@@ -1,5 +1,15 @@
 w,h = term.getSize()
 
+function getStyle(name)
+  file = fs.open("os/synergy/styles/"..name)
+  data = file.readAll()
+  style = textutils.unserialise(data)
+  return style
+end
+function centerInLine(x1,x2,y,txt)
+  term.setCursorPos(((x2-x1)/2)-(#txt/2),y1)
+  write(txt)
+end
 function setStyle(style)
   if not type(style)=="table" then
     error("Invalid style!")
@@ -9,9 +19,40 @@ function setStyle(style)
   term.setCursorPos(1,1)
   term.setBackgroundColor(style.bar.col)
   term.clearLine()
+  term.setTextColor(style.bar.txtcol)
   write(style.bar.text)
   if style.bar.exit then
     term.setCursorPos(w,1)
     term.blit("x","f","e")
+  end
+  term.setBackgroundColor(style.bg)
+  term.setTextColor(style.fg)
+  term.setCursorPos(2,2)
+end
+function drawTextBox(x,y,l)
+
+end
+function drawButton(style,x,y,l,t,c,d)
+  term.setCursorPos(x,y)
+  sp = string.rep(" ",l)
+  if d then
+    term.setBackgroundColor(style.btndis)
+  else
+    term.setBackgroundColor(style.btncol)
+  end
+  term.setTextColor(style.btntxt)
+  write(sp)
+  if c then
+    centerInLine(x,x+l,y,t)
+  else
+    write(t)
+  end
+end
+function testButton(buttons)
+  e,b,x,y = os.pullEvent("mouse_click")
+  for i = 1,#buttons do
+    if x>=buttons[i][1] and x<=buttons[i][3] and y>=buttons[i][2] and y<=buttons[i][4] then
+      return i
+    end
   end
 end

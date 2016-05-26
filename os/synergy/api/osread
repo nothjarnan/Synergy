@@ -1,0 +1,6 @@
+function open(path)
+  file = fs.open(path,"r")
+  data = file.readAll()
+  settings = textutils.unserialise(data)
+  return settings
+end

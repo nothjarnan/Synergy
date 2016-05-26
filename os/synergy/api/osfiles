@@ -1,0 +1,19 @@
+function getTree()
+  tree = {}
+  return tree
+end
+function find(name)
+
+end
+function dlPack(name)
+
+end
+function findPackagesFromServer(url)
+
+end
+function findPackageDirInfo(url)
+
+end
+function createNewUser(name)
+
+end

@@ -1,8 +1,13 @@
 {
   bg = colors.lightBlue;
+  fg = colors.black;
   bar = {
     col = colors.blue;
+    txtcol = colors.black
     text = "Unset bar title";
     exit = true;
   };
+  btncol = colors.lightGrey;
+  btntxt = colors.black;
+  btndis = colors.grey;
 }

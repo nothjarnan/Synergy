@@ -1,0 +1,6 @@
+function api(name)
+  os.loadAPI("os/synergy/api/"..name)
+end
+function image(name)
+  
+end
