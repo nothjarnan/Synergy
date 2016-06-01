@@ -3,7 +3,7 @@
   fg = colors.black;
   bar = {
     col = colors.blue;
-    txtcol = colors.black
+    txtcol = colors.black;
     text = "Unset bar title";
     exit = true;
   };

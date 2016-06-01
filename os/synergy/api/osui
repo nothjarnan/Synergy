@@ -1,7 +1,7 @@
 w,h = term.getSize()
 
 function getStyle(name)
-  file = fs.open("os/synergy/styles/"..name)
+  file = fs.open("os/synergy/styles/"..name,"r")
   data = file.readAll()
   style = textutils.unserialise(data)
   return style
@@ -29,8 +29,20 @@ function setStyle(style)
   term.setTextColor(style.fg)
   term.setCursorPos(2,2)
 end
-function drawTextBox(x,y,l)
-
+function drawTextBox(x,y,l,t,c)
+  term.setCursorPos(x,y)
+  str = string.rep(" ",l-#t)
+  str = t..str
+  sp = string.rep(" ",l)
+  if c then
+    term.setBackgroundColor(colors.white)
+    term.setTextColor(colors.lightGrey)
+    write(str)
+  else
+    term.setBackgroundColor(colors.white)
+    term.setTextColor(colors.black)
+    write(sp)
+  end
 end
 function drawButton(style,x,y,l,t,c,d)
   term.setCursorPos(x,y)
@@ -55,4 +67,10 @@ function testButton(buttons)
       return i
     end
   end
+end
+function write(txt,x,y,txtcol,bgcol)
+  term.setCursorPos(x,y)
+  term.setTextColor(colors[txtcol])
+  term.setBackgroundColor(colors[bgcol])
+  write(txt)
 end
