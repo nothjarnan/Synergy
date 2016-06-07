@@ -2,6 +2,8 @@ os.loadAPI("os/synergy/api/osload")
 osload.api("osui")
 osload.api("osfiles")
 osload.api("osread")
+osload.api("oslanguage")
+lang = osread.getLang()
 style = osui.getStyle("default")
 style.bar.text = "Choose a server"
 osui.setStyle(style)

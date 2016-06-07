@@ -1,7 +1,7 @@
 os.loadAPI("os/synergy/api/osload")
 osload.api("osui")
 style = osui.getStyle("default")
-style.bar.text = "Welcome to Synergy"
+--style.bar.text = "Welcome to Synergy"
 osui.setStyle(style)
 osui.write("Welcome to Synergy! Start of by making your account.",2,2,"black","lightBlue")
 osui.write("Account name",2,4,"black","lightBlue")

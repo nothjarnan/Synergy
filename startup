@@ -3,52 +3,72 @@ term.clear()
 img = paintutils.loadImage("os/pic/logo")
 for y = 1,#img do
   for x = 1,#img[y] do
-    if img[y][x]==1 then
+    if img[y][x]==1 or img[y][x]==8 or img[y][x]==512 or img[y][x]==2048 then
       term.setCursorPos(x,y)
-      term.setBackgroundColor(colors.white)
+      term.setBackgroundColor(256)
       write(" ")
       term.setBackgroundColor(colors.black)
     end
   end
 end
-sleep(1)
+sleep(0.1)
 for y = 1,#img do
-  if not img[y][1]==nil then
-    for x = 1,#img[y] do
-      if img[x]==8 then
-        term.setCursorPos(x,y)
-        term.setBackgroundColor(8)
-        write(" ")
-        term.setBackgroundColor(colors.black)
-      end
+  for x = 1,#img[y] do
+    if img[y][x]==1 then
+      term.setCursorPos(x,y)
+      term.setBackgroundColor(1)
+      write(" ")
+      term.setBackgroundColor(colors.black)
     end
   end
 end
-sleep(1)
+sleep(0.1)
 for y = 1,#img do
-  if not img[y]==nil then
-    for x = 1,#img[y] do
-      if img[x]==512 then
-        term.setCursorPos(x,y)
-        term.setBackgroundColor(512)
-        write(" ")
-        term.setBackgroundColor(colors.black)
-      end
+  for x = 1,#img[y] do
+    if img[y][x]==8 then
+      term.setCursorPos(x,y)
+      term.setBackgroundColor(8)
+      write(" ")
+      term.setBackgroundColor(colors.black)
     end
   end
 end
-sleep(1)
+sleep(0.1)
 for y = 1,#img do
-  if not img[y]==nil then
+  for x = 1,#img[y] do
+    if img[y][x]==512 then
+      term.setCursorPos(x,y)
+      term.setBackgroundColor(512)
+      write(" ")
+      term.setBackgroundColor(colors.black)
+    end
+  end
+end
+sleep(0.1)
+for y = 1,#img do
+  for x = 1,#img[y] do
+    if img[y][x]==2048 then
+      term.setCursorPos(x,y)
+      term.setBackgroundColor(2048)
+      write(" ")
+      term.setBackgroundColor(colors.black)
+    end
+  end
+end
+sleep(0.1)
+col = {colors.black,colors.gray,colors.lightGray,colors.white}
+for i = 1,4 do
+  for y = 1,#img do
     for x = 1,#img[y] do
-      if img[x]==2048 then
+      if img[y][x]==16384 then
         term.setCursorPos(x,y)
-        term.setBackgroundColor(2048)
+        term.setBackgroundColor(col[i])
         write(" ")
         term.setBackgroundColor(colors.black)
       end
     end
   end
+  sleep(0.05)
 end
 sleep(2)
 if true then

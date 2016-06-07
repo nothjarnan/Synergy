@@ -14,7 +14,7 @@ function setStyle(style)
   if not type(style)=="table" then
     error("Invalid style!")
   end
-  term.setBackgroundColor(style.bg)
+  term.setBackgroundColor(style[1])
   term.clear()
   term.setCursorPos(1,1)
   term.setBackgroundColor(style.bar.col)
