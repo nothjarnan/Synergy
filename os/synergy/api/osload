@@ -2,5 +2,47 @@ function api(name)
   os.loadAPI("os/synergy/api/"..name)
 end
 function image(name)
+
+end
+function getLoggedInUser()
   
+end
+function open(path)
+  file = fs.open(path,"r")
+  data = file.readAll()
+  return textutils.unserialise(data)
+end
+function getSettingsGlobal()
+  open("data/user/global/settings")
+  return settings
+end
+function getLang()
+  settings = getSettingsGlobal()
+  file = fs.open("os/synergy/language/"..settings.lang,"r")
+  data = file.readAll()
+  return textutils.unserialise(data)
+end
+function readPackageServer(server)
+  dataFile = http.get(server.."info.txt")
+  serverInfo = dataFile.readAll()
+  serverInfo = textutils.unserialise(serverInfo)
+  info = serverInfo.info
+  packs = serverInfo.packs
+  dataFile.close()
+  return info,packs
+end
+function readFilesInPack(server,pack)
+  packInfoFile = http.get(server..pack.."/info.txt")
+  packInfo = packInfoFile.readAll()
+  tPackInfo = textutils.unserialise(packInfo)
+  info = tPackInfo.info
+  files = tPackInfo.files
+  packInfoFile.close()
+  return info,files
+end
+function downloadFilesFromPack(server,pack,files)
+  for i = 1,#files do
+    file = http.get(server..pack.."/"..files)
+    downloaded = fs.open()
+  end
 end

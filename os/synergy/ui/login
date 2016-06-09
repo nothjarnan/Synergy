@@ -1,7 +1,9 @@
 os.loadAPI("os/synergy/api/osload")
 osload.api("osfiles")
 osload.api("osui")
-
 style = osui.getStyle("default")
 style.bar.text = "Synergy Login"
 osui.setStyle(style)
+function setLoggedIn()
+  
+end

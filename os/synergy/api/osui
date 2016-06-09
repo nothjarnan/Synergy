@@ -1,9 +1,26 @@
 w,h = term.getSize()
-
+--[[ Currently not working
 function getStyle(name)
   file = fs.open("os/synergy/styles/"..name,"r")
   data = file.readAll()
   style = textutils.unserialise(data)
+  return style
+end
+--]]
+function getStyle()
+  style = {
+    bg = colors.white,
+    fg = colors.black,
+    bar = {
+      col = colors.blue,
+      txtcol = colors.black,
+      text = "Unset bar title",
+      exit = true,
+    },
+    btncol = colors.lightGrey,
+    btntxt = colors.black,
+    btndis = colors.grey,
+  }
   return style
 end
 function centerInLine(x1,x2,y,txt)
@@ -14,7 +31,7 @@ function setStyle(style)
   if not type(style)=="table" then
     error("Invalid style!")
   end
-  term.setBackgroundColor(style[1])
+  term.setBackgroundColor(style.bg)
   term.clear()
   term.setCursorPos(1,1)
   term.setBackgroundColor(style.bar.col)
@@ -22,6 +39,7 @@ function setStyle(style)
   term.setTextColor(style.bar.txtcol)
   write(style.bar.text)
   if style.bar.exit then
+    local w,h = term.getSize()
     term.setCursorPos(w,1)
     term.blit("x","f","e")
   end

@@ -1,10 +1,12 @@
 term.setBackgroundColor(colors.black)
 term.clear()
 img = paintutils.loadImage("os/pic/logo")
+posX = 17
+posY = 0
 for y = 1,#img do
   for x = 1,#img[y] do
     if img[y][x]==1 or img[y][x]==8 or img[y][x]==512 or img[y][x]==2048 then
-      term.setCursorPos(x,y)
+      term.setCursorPos(posX+x,posY+y)
       term.setBackgroundColor(256)
       write(" ")
       term.setBackgroundColor(colors.black)
@@ -15,7 +17,7 @@ sleep(0.1)
 for y = 1,#img do
   for x = 1,#img[y] do
     if img[y][x]==1 then
-      term.setCursorPos(x,y)
+      term.setCursorPos(posX+x,posY+y)
       term.setBackgroundColor(1)
       write(" ")
       term.setBackgroundColor(colors.black)
@@ -26,7 +28,7 @@ sleep(0.1)
 for y = 1,#img do
   for x = 1,#img[y] do
     if img[y][x]==8 then
-      term.setCursorPos(x,y)
+      term.setCursorPos(posX+x,posY+y)
       term.setBackgroundColor(8)
       write(" ")
       term.setBackgroundColor(colors.black)
@@ -37,7 +39,7 @@ sleep(0.1)
 for y = 1,#img do
   for x = 1,#img[y] do
     if img[y][x]==512 then
-      term.setCursorPos(x,y)
+      term.setCursorPos(posX+x,posY+y)
       term.setBackgroundColor(512)
       write(" ")
       term.setBackgroundColor(colors.black)
@@ -48,7 +50,7 @@ sleep(0.1)
 for y = 1,#img do
   for x = 1,#img[y] do
     if img[y][x]==2048 then
-      term.setCursorPos(x,y)
+      term.setCursorPos(posX+x,posY+y)
       term.setBackgroundColor(2048)
       write(" ")
       term.setBackgroundColor(colors.black)
@@ -56,21 +58,26 @@ for y = 1,#img do
   end
 end
 sleep(0.1)
-col = {colors.black,colors.gray,colors.lightGray,colors.white}
-for i = 1,4 do
+
+col = {colors.black,colors.gray,colors.lightGray,colors.white,colors.lightGray,colors.gray,colors.black}
+for i = 1,#col do
   for y = 1,#img do
     for x = 1,#img[y] do
       if img[y][x]==16384 then
-        term.setCursorPos(x,y)
+        term.setCursorPos(posX+x,posY+y)
         term.setBackgroundColor(col[i])
         write(" ")
         term.setBackgroundColor(colors.black)
       end
     end
   end
-  sleep(0.05)
+  sleep(0.1)
 end
-sleep(2)
+term.setCursorPos(20,16)
+term.setBackgroundColor(colors.black)
+term.setTextColor(colors.white)
+textutils.slowPrint(":Synergy OS")
+sleep(3)
 if true then
   shell.run("os/synergy/ui/firstTime")
 else

@@ -9,4 +9,5 @@
       {"username","default","pass",""};
     };
   };
+  lang = en;
 }

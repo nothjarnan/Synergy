@@ -1,6 +1,6 @@
 {
-  colors.lightBlue;
-  colors.black;
+  colors.lightBlue,
+  colors.black,
   bar = {
     col = colors.blue;
     txtcol = colors.black;
